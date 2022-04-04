@@ -2,13 +2,14 @@
   <router-view></router-view>
 </template>
 
-<script>
-import Chao from './components/Chao.vue'
+<script lang="ts">
+import { provide,ref } from 'vue';
 
 export default {
   name: 'App',
-  components: {
-    Chao
+  setup(){
+    const menuVisible = ref(false)
+    provide('menuVisible',menuVisible)
   }
 }
 </script>
