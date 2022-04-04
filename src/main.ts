@@ -4,13 +4,18 @@ import './index.scss';
 import { createWebHashHistory, createRouter } from 'vue-router';
 import Home from './views/Home.vue';
 import Doc from './views/Doc.vue';
+import SwitchDemo from './components/SwitchDemo.vue';
 
 const history = createWebHashHistory();
 const router = createRouter({
     history: history,
     routes: [
         { path: '/', component: Home },
-        { path: '/Doc', component: Doc }
+        {
+            path: '/Doc', component: Doc, children: [
+                { path: 'switch', component: SwitchDemo }
+            ]
+        },
     ]
 });
 
