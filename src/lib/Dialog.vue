@@ -1,30 +1,32 @@
 <template>
   <template v-if="visible">
-    <div
-      class="qc-dialog-overlay"
-      @click="onClickOverlay"
-    ></div>
-    <div class="qc-dialog-wrapper">
-      <div class="qc-dialog">
-        <header>
-          {{title}}
-          <span
-            @click="close"
-            class="qc-dialog-close"
-          ></span>
-        </header>
-        <main>
-          <slot />
-        </main>
-        <footer>
-          <Button
-            @click="ok"
-            level='main'
-          >OK</Button>
-          <Button @click="cancel">Cancel</Button>
-        </footer>
+    <teleport to='body'>
+      <div
+        class="qc-dialog-overlay"
+        @click="onClickOverlay"
+      ></div>
+      <div class="qc-dialog-wrapper">
+        <div class="qc-dialog">
+          <header>
+            {{title}}
+            <span
+              @click="close"
+              class="qc-dialog-close"
+            ></span>
+          </header>
+          <main>
+            <slot />
+          </main>
+          <footer>
+            <Button
+              @click="ok"
+              level='main'
+            >OK</Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </teleport>
   </template>
 </template>
 <script lang="ts">
