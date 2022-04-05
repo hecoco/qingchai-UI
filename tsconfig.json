@@ -5,5 +5,8 @@
         "strict": false,
         "jsx": "preserve",
         "moduleResolution": "node",
+        "types": [
+            "vite/client"
+        ],
     },
 }

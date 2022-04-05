@@ -15,7 +15,7 @@
 <script lang="ts">
 import { computed } from "@vue/runtime-core";
 export default {
-  inheritAttrs: false,
+  // inheritAttrs: false,
   props: {
     // theme: String,
     // size: String,

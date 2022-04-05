@@ -1,21 +1,143 @@
 <template>
-  <div class="dialog-overlay"></div>
-  <div class="dialog-wrapper">
-    <header>title</header>
-    <main>
-      <p>文字1文字1文字</p>
-      <p>文字2文字2文字</p>
-    </main>
-    <footer>
-      <Button>OK</Button>
-      <Button>Cancel</Button>
-    </footer>
-  </div>
+  <template v-if="visible">
+    <div
+      class="qc-dialog-overlay"
+      @click="onClickOverlay"
+    ></div>
+    <div class="qc-dialog-wrapper">
+      <div class="qc-dialog">
+        <header>
+          title
+          <span
+            @click="close"
+            class="qc-dialog-close"
+          ></span>
+        </header>
+        <main>
+          <p>文字1文字1文字</p>
+          <p>文字2文字2文字</p>
+        </main>
+        <footer>
+          <Button
+            @click="ok"
+            level='main'
+          >OK</Button>
+          <Button @click="cancel">Cancel</Button>
+        </footer>
+      </div>
+    </div>
+  </template>
 </template>
-<script>
+<script lang="ts">
 import Button from "./Button.vue";
 export default {
-  setup() {},
   components: { Button },
+  props: {
+    visible: {
+      type: Boolean,
+      default: false,
+    },
+    closeOnclickOverlay: {
+      type: Boolean,
+      default: true,
+    },
+    ok: {
+      type: Function,
+    },
+    cancel: {
+      type: Function,
+    },
+  },
+  setup(props, context) {
+    const close = () => {
+      context.emit("update:visible", false);
+    };
+    const onClickOverlay = () => {
+      if (props.closeOnclickOverlay) {
+        close();
+      }
+    };
+    const ok = () => {
+      if (props.ok && props.ok() !== false) {
+        close();
+      }
+    };
+    const cancel = () => {
+      props.cancel();
+      close();
+    };
+
+    return { close, onClickOverlay, ok, cancel };
+  },
 };
 </script>
+<style lang="scss">
+$radius: 4px;
+$border-color: #d9d9d9;
+.qc-dialog {
+  background: white;
+  border-radius: $radius;
+  box-shadow: 0 0 3px fade_out(black, 0.5);
+  min-width: 15em;
+  max-width: 90%;
+
+  &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: fade_out(black, 0.5);
+    z-index: 10;
+  }
+  &-wrapper {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+  }
+  > header {
+    padding: 12px 16px;
+    border-bottom: 1px solid $border-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-style: 20px;
+  }
+  > main {
+    padding: 12px 16px;
+  }
+  > footer {
+    border-top: 1px solid $border-color;
+    padding: 12px 16px;
+    text-align: right;
+  }
+
+  &-close {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      background: black;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+    }
+    &::before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+}
+</style>
