@@ -64,6 +64,21 @@
         >警告文本按钮</Button>
       </div>
     </div>
+    <div>禁用按钮</div>
+    <div>
+      <Button
+        disabled
+        theme='button'
+      >button</Button>
+      <Button
+        disabled
+        theme='link'
+      >链接</Button>
+      <Button
+        disabled
+        theme='text'
+      >文本</Button>
+    </div>
   </div>
 </template>
 

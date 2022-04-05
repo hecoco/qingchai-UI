@@ -2,6 +2,7 @@
   <button
     class="qc-button"
     :class="classes"
+    :disabled='disabled'
   >
     <slot />
   </button>
@@ -25,6 +26,10 @@ export default {
     level: {
       type: String,
       default: "normal",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   setup(props) {
@@ -55,6 +60,7 @@ $color: #333;
 $blue: #00a1d6;
 $radius: 4px;
 $red: red;
+$grey: grey;
 .qc-button {
   box-sizing: border-box;
   height: $h;
@@ -156,6 +162,22 @@ $red: red;
       &:focus {
         color: darken($red, 10%);
       }
+    }
+  }
+  &.qc-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.qc-theme-link,
+  &.qc-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
     }
   }
 }
