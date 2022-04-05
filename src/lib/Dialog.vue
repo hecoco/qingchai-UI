@@ -7,15 +7,14 @@
     <div class="qc-dialog-wrapper">
       <div class="qc-dialog">
         <header>
-          title
+          {{title}}
           <span
             @click="close"
             class="qc-dialog-close"
           ></span>
         </header>
         <main>
-          <p>文字1文字1文字</p>
-          <p>文字2文字2文字</p>
+          <slot />
         </main>
         <footer>
           <Button
@@ -46,6 +45,10 @@ export default {
     },
     cancel: {
       type: Function,
+    },
+    title: {
+      type: String,
+      default: "提示",
     },
   },
   setup(props, context) {

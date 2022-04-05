@@ -6,7 +6,9 @@
       :closeOnclickOverlay='false'
       :ok='f1'
       :cancel='f2'
-    />
+    >
+      <div>111</div>
+    </Dialog>
   </div>
 </template>
 
@@ -22,12 +24,8 @@ export default {
       console.log(1);
       x.value = !x.value;
     };
-    const f1 = () => {
-      console.log(1);
-    };
-    const f2 = () => {
-      console.log(2);
-    };
+    const f1 = () => {};
+    const f2 = () => {};
     return { x, toggle, f1, f2 };
   },
 };
