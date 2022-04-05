@@ -79,6 +79,9 @@
         theme='text'
       >文本</Button>
     </div>
+    <div>加载</div>
+    <Button loading>加载中</Button>
+    <Button>加载完成</Button>
   </div>
 </template>
 
