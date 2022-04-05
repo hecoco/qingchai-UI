@@ -1,21 +1,45 @@
 <template>
   <button
     class="qc-button"
-    :class="`qc-theme-${theme?theme:'button'}`"
+    :class="classes"
   >
     <slot />
   </button>
 </template>
 
 <script lang="ts">
+import { computed } from "@vue/runtime-core";
 export default {
   inheritAttrs: false,
   props: {
-    theme: String,
+    // theme: String,
+    // size: String,
+    theme: {
+      type: String,
+      default: "button",
+    },
+    size: {
+      type: String,
+      default: "normal",
+    },
+    level: {
+      type: String,
+      default: "normal",
+    },
   },
-  setup(props, context) {
-    const { size, ...rest } = context.attrs;
-    return { size, rest };
+  setup(props) {
+    const { theme, size, level } = props;
+    const classes = computed(() => {
+      return {
+        // [`qc-theme-${theme ? theme : "button"}`]: theme,
+        // [`qc-size-${size ? size : size}`]: size,
+        [`qc-theme-${theme}`]: theme,
+        [`qc-size-${size}`]: size,
+        [`qc-level-${level}`]: level,
+      };
+    });
+    console.log(classes);
+    return { classes };
   },
 };
 
@@ -30,6 +54,7 @@ $border-color: #d9d9d9;
 $color: #333;
 $blue: #00a1d6;
 $radius: 4px;
+$red: red;
 .qc-button {
   box-sizing: border-box;
   height: $h;
@@ -44,6 +69,7 @@ $radius: 4px;
   border: 1px solid $border-color;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
+  transition: background 250ms;
   & + & {
     margin-left: 8px;
   }
@@ -73,6 +99,63 @@ $radius: 4px;
     &:hover,
     &:focus {
       background: darken(white, 5%);
+    }
+  }
+  &.qc-size-big {
+    font-size: 24p;
+    height: 48px;
+    padding: 0 16px;
+  }
+  &.qc-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
+  }
+  &.qc-theme-button {
+    &.qc-level-main {
+      background: $blue;
+      color: white;
+      border-color: $blue;
+      &:hover,
+      &focus {
+        background: darken($blue, 10%);
+        border-collapse: darken($blue, 10%);
+      }
+    }
+    &.qc-level-danger {
+      background: $red;
+      border-color: $red;
+      color: white;
+      &:hover,
+      &:focus {
+        background: darken($red, 10%);
+        border-color: darken($red, 10%);
+      }
+    }
+  }
+  &.qc-theme-link {
+    &.qc-level-danger {
+      color: $red;
+      &:hover,
+      &:focus {
+        color: darken($red, 10%);
+      }
+    }
+  }
+  &.qc-theme-text {
+    &.qc-level-main {
+      color: $blue;
+      &:hover,
+      &:focus {
+        color: darken($blue, 10%);
+      }
+    }
+    &.qc-level-danger {
+      color: $red;
+      &:hover,
+      &:focus {
+        color: darken($red, 10%);
+      }
     }
   }
 }
