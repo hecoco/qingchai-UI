@@ -1,5 +1,5 @@
 <template>
-    <div>
-        tabs
-    </div>
+  <div>
+    tabs
+  </div>
 </template>

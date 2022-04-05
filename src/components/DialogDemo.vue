@@ -1,5 +1,5 @@
 <template>
-    <div>
-        dialog
-    </div>
+  <div>
+    dialog
+  </div>
 </template>
