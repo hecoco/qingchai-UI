@@ -1,7 +1,8 @@
 <template>
   <button
-    :class="{checked:value}"
+    :class="{'qc-checked' : value}"
     @click="toggle"
+    class="qc-switch"
   ><span></span></button>
 </template>
 
@@ -19,10 +20,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button {
+.qc-switch {
   height: $h;
   width: calc($h * 2);
   border: none;
@@ -40,7 +41,7 @@ button {
     border-radius: calc($h2/2);
     transition: ease 0.2s;
   }
-  &.checked {
+  &.qc-checked {
     background: #00a1d6;
     > span {
       left: calc(100% - $h2 - 2px);
@@ -54,7 +55,7 @@ button {
       width: $h2 + 4px;
     }
   }
-  &.checked:active {
+  &.qc-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;

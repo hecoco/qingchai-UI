@@ -1,7 +1,10 @@
 <template>
-  <Button @click="onClick">
-    button
-  </Button>
+  <div>
+    <Button>button</Button>
+    <Button theme='button'>button</Button>
+    <Button theme='link'>链接</Button>
+    <Button theme='text'>文本</Button>
+  </div>
 </template>
 
 <script lang='ts'>
