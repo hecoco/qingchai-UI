@@ -61,11 +61,7 @@ export default {
         throw new Error("Tabs子标签必须是Tab");
       }
     });
-    const current = computed(() => {
-      return defaults.filter((tab) => {
-        return tab.props.title === props.selected;
-      })[0];
-    });
+
     const titles = defaults.map((tab) => {
       return tab.props.title;
     });
@@ -75,7 +71,6 @@ export default {
     return {
       defaults,
       titles,
-      current,
       select,
       navItems,
       indicator,
