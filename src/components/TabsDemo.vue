@@ -3,8 +3,11 @@
   <Tabs v-model:selected="title">
     <Tab title="标题一">内容一</Tab>
     <Tab title="标题二">内容二</Tab>
+    <Tab title="标题三">内容三</Tab>
+    <Tab title="标题四">内容四</Tab>
+
   </Tabs>
-</template> 
+</template>
 
 <script lang='ts'>
 import { ref } from "vue";

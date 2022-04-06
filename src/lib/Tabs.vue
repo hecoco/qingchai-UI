@@ -115,6 +115,7 @@ $border-color: #d9d9d9;
       left: 0;
       bottom: -1px;
       width: 100px;
+      transition: all 200ms;
     }
   }
   &-content {
