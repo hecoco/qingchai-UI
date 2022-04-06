@@ -18,6 +18,7 @@ export const openDialog = (options) => {
             },
                 {
                     title, content
+                    // 因插槽无法显示
                 });
         }
     });
