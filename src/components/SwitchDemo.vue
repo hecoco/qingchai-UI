@@ -4,25 +4,25 @@
     <div class="demo">
       <h2>常规用法</h2>
       <div class="demo-component">
-        <SwitchDemo1 />
+        <component :is="Switch1Demo"></component>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="bool" /&gt;</pre>
+        <pre>{{Switch1Demo.__sourceCode}}</pre>
       </div>
     </div>
     <div class="demo">
       <h2>支持 disabled </h2>
       <div class="demo-component">
-        <SwitchDemo2 />
+        <Switch2Demo />
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre>
+        <pre v-text='Switch2Demo.__sourceCode'></pre>
       </div>
     </div>
   </div>
@@ -31,12 +31,17 @@
 <script lang="ts">
 import Switch from "../lib/Switch.vue";
 import Button from "../lib/Button.vue";
-import SwitchDemo1 from "./Switch1.demo.vue";
-import SwitchDemo2 from "./Switch2.demo.vue";
+import Switch1Demo from "./Switch1.demo.vue";
+import Switch2Demo from "./Switch2.demo.vue";
+import "prismjs";
 import { ref } from "vue";
 //加文字https://www.iviewui.com/components/switch
 export default {
-  components: { Switch, Button, SwitchDemo1, SwitchDemo2 },
+  components: { Switch, Button },
+  setup() {
+    const bool = ref(false);
+    return { bool, Switch1Demo, Switch2Demo };
+  },
 };
 </script>
 
