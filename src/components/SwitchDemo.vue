@@ -4,7 +4,7 @@
     <div class="demo">
       <h2>常规用法</h2>
       <div class="demo-component">
-        <Switch v-model:value="bool"></Switch>
+        <SwitchDemo1 />
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
@@ -16,10 +16,7 @@
     <div class="demo">
       <h2>支持 disabled </h2>
       <div class="demo-component">
-        <Switch
-          v-model:value="bool2"
-          disabled
-        />
+        <SwitchDemo2 />
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
@@ -34,15 +31,12 @@
 <script lang="ts">
 import Switch from "../lib/Switch.vue";
 import Button from "../lib/Button.vue";
+import SwitchDemo1 from "./Switch1.demo.vue";
+import SwitchDemo2 from "./Switch2.demo.vue";
 import { ref } from "vue";
 //加文字https://www.iviewui.com/components/switch
 export default {
-  components: { Switch, Button },
-  setup() {
-    const bool = ref(false);
-    const bool2 = ref(false);
-    return { bool, bool2 };
-  },
+  components: { Switch, Button, SwitchDemo1, SwitchDemo2 },
 };
 </script>
 
