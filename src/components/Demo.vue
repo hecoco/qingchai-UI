@@ -3,7 +3,6 @@
     <h2>{{component.__sourceCodeTitle}}</h2>
     <div class="demo-component">
       <component :is="component" />
-      {{component}}
     </div>
     <div class="demo-actions">
       <Button @click="codeVisible=!codeVisible">查看代码</Button>
