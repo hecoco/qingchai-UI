@@ -52,7 +52,6 @@ export default {
         [`qc-loading-${loading}`]: loading,
       };
     });
-    console.log(classes);
     return { classes };
   },
 };
