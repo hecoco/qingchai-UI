@@ -1,38 +1,11 @@
 <template>
   <div>
+
     <div>
       <Button>button</Button>
       <Button theme='button'>button</Button>
       <Button theme='link'>链接</Button>
       <Button theme='text'>文本</Button>
-    </div>
-    <div>大小</div>
-    <div>
-      <Button size='big'>大大大</Button>
-      <Button>正常的</Button>
-      <Button size='small'>小小小</Button>
-    </div>
-    <div>
-      <Button
-        size='big'
-        theme='link'
-      >大大大</Button>
-      <Button theme='link'>正常的</Button>
-      <Button
-        size='small'
-        theme='link'
-      >小小小</Button>
-    </div>
-    <div>
-      <Button
-        size='big'
-        theme='text'
-      >大大大</Button>
-      <Button theme='text'>正常的</Button>
-      <Button
-        size='small'
-        theme='text'
-      >小小小</Button>
     </div>
     <div>颜色</div>
     <div>
@@ -82,16 +55,22 @@
     <div>加载</div>
     <Button loading>加载中</Button>
     <Button>加载完成</Button>
+
+    <Demo :component='Button1Demo' />
+    <Demo :component='Button3Demo' />
   </div>
 </template>
 
 <script lang='ts'>
 import Button from "../lib/Button.vue";
+import Demo from "../components/Demo.vue";
+import Button1Demo from "./Button1.demo.vue";
+import Button3Demo from "./Button3.demo.vue";
 export default {
-  components: { Button },
+  components: { Button, Demo },
   setup() {
     const onClick = () => {};
-    return { onClick };
+    return { onClick, Button1Demo, Button3Demo };
   },
 };
 </script>

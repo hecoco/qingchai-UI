@@ -25,10 +25,10 @@ $h: 22px;
 $h2: $h - 4px;
 .qc-switch {
   height: $h;
-  width: calc($h * 2);
+  width: $h * 2;
   border: none;
   background: #ccd0d7;
-  border-radius: calc($h/2);
+  border-radius: $h/2;
   position: relative;
 
   span {
@@ -38,13 +38,13 @@ $h2: $h - 4px;
     height: $h2;
     width: $h2;
     background: #ffffff;
-    border-radius: calc($h2/2);
+    border-radius: $h2/2;
     transition: ease 0.2s;
   }
   &.qc-checked {
     background: #00a1d6;
     > span {
-      left: calc(100% - $h2 - 2px);
+      left: calc(100% - #{$h2} - 2px);
     }
   }
   &:focus {

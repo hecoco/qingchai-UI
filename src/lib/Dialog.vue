@@ -8,14 +8,14 @@
       <div class="qc-dialog-wrapper">
         <div class="qc-dialog">
           <header>
-            {{title}}
+            <slot name='title' />
             <span
               @click="close"
               class="qc-dialog-close"
             ></span>
           </header>
           <main>
-            <slot />
+            <slot name='content' />
           </main>
           <footer>
             <Button
@@ -68,7 +68,7 @@ export default {
       }
     };
     const cancel = () => {
-      props.cancel();
+      props.cancel?.();
       close();
     };
 

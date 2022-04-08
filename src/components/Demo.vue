@@ -3,7 +3,6 @@
     <h2>{{component.__sourceCodeTitle}}</h2>
     <div class="demo-component">
       <component :is="component" />
-      {{component}}
     </div>
     <div class="demo-actions">
       <Button @click="codeVisible=!codeVisible">查看代码</Button>
@@ -39,7 +38,11 @@ export default {
       );
     });
     const codeVisible = ref(false);
-    return { Prism, html, codeVisible };
+    return {
+      Prism,
+      html,
+      codeVisible,
+    };
   },
 };
 </script>
