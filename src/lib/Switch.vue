@@ -3,7 +3,6 @@
     class="qc-switch"
     :class="{'qc-checked':value}"
     @click="toggle"
-    ref="x"
   ><span></span></button>
 </template>
 
@@ -11,9 +10,6 @@
 export default {
   props: {
     value: Boolean,
-  },
-  mounted() {
-    // 获取到 one DOM 节点
   },
   setup(props, context) {
     const toggle = () => {

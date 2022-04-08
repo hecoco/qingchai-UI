@@ -15,10 +15,7 @@
 <script lang="ts">
 import { computed } from "@vue/runtime-core";
 export default {
-  // inheritAttrs: false,
   props: {
-    // theme: String,
-    // size: String,
     theme: {
       type: String,
       default: "button",
@@ -44,8 +41,6 @@ export default {
     const { theme, size, level, loading } = props;
     const classes = computed(() => {
       return {
-        // [`qc-theme-${theme ? theme : "button"}`]: theme,
-        // [`qc-size-${size ? size : size}`]: size,
         [`qc-theme-${theme}`]: theme,
         [`qc-size-${size}`]: size,
         [`qc-level-${level}`]: level,
@@ -55,10 +50,6 @@ export default {
     return { classes };
   },
 };
-
-//#00A1D6正常  #00B5E5悬浮 #80D0Eb禁止 蓝色
-//#FB7299 #FC8BAB
-//#ffffff #E3E5E7
 </script>
 
 <style lang="scss">
