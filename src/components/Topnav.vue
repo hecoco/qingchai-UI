@@ -55,7 +55,7 @@ $color: #006863;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 99;
   justify-content: center;
   align-items: center;
   > .logo {

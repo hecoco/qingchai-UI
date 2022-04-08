@@ -5,7 +5,20 @@
       <component :is="component" />
     </div>
     <div class="demo-actions">
-      <Button @click="codeVisible=!codeVisible">查看代码</Button>
+      <Button
+        v-if="codeVisible"
+        theme='link'
+        @click="codeVisible=!codeVisible"
+      ><svg class="icon">
+          <use xlink:href="#icon-xiangshang"></use>
+        </svg></Button>
+      <Button
+        v-if="!codeVisible"
+        theme='link'
+        @click="codeVisible=!codeVisible"
+      ><svg class="icon">
+          <use xlink:href="#icon-xiangxia"></use>
+        </svg></Button>
     </div>
     <div
       class="demo-code"
@@ -64,8 +77,10 @@ $border-color: #d9d9d9;
     padding: 16px;
   }
   &-actions {
-    padding: 8px 16px;
+    padding: 2px 16px;
     border-top: 1px dashed $border-color;
+    display: flex;
+    justify-content: center;
   }
   &-code {
     padding: 8px 16px;
