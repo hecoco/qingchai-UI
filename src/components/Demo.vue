@@ -4,21 +4,22 @@
     <div class="demo-component">
       <component :is="component" />
     </div>
-    <div class="demo-actions">
-      <Button
+    <div
+      class="demo-actions"
+      @click="codeVisible=!codeVisible"
+    >
+      <svg
+        class="icon"
         v-if="codeVisible"
-        theme='link'
-        @click="codeVisible=!codeVisible"
-      ><svg class="icon">
-          <use xlink:href="#icon-xiangshang"></use>
-        </svg></Button>
-      <Button
+      >
+        <use xlink:href="#icon-xiangshang"></use>
+      </svg>
+      <svg
+        class="icon"
         v-if="!codeVisible"
-        theme='link'
-        @click="codeVisible=!codeVisible"
-      ><svg class="icon">
-          <use xlink:href="#icon-xiangxia"></use>
-        </svg></Button>
+      >
+        <use xlink:href="#icon-xiangxia"></use>
+      </svg>
     </div>
     <div
       class="demo-code"
@@ -81,6 +82,9 @@ $border-color: #d9d9d9;
     border-top: 1px dashed $border-color;
     display: flex;
     justify-content: center;
+    > svg {
+      margin: 6px 0;
+    }
   }
   &-code {
     padding: 8px 16px;
