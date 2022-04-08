@@ -1,12 +1,5 @@
 <template>
   <div>
-
-    <div>
-      <Button>button</Button>
-      <Button theme='button'>button</Button>
-      <Button theme='link'>链接</Button>
-      <Button theme='text'>文本</Button>
-    </div>
     <div>颜色</div>
     <div>
       <div>
@@ -37,27 +30,10 @@
         >警告文本按钮</Button>
       </div>
     </div>
-    <div>禁用按钮</div>
-    <div>
-      <Button
-        disabled
-        theme='button'
-      >button</Button>
-      <Button
-        disabled
-        theme='link'
-      >链接</Button>
-      <Button
-        disabled
-        theme='text'
-      >文本</Button>
-    </div>
-    <div>加载</div>
-    <Button loading>加载中</Button>
-    <Button>加载完成</Button>
-
     <Demo :component='Button1Demo' />
     <Demo :component='Button3Demo' />
+    <Demo :component='Button4Demo' />
+    <Demo :component='Button5Demo' />
   </div>
 </template>
 
@@ -66,11 +42,19 @@ import Button from "../lib/Button.vue";
 import Demo from "../components/Demo.vue";
 import Button1Demo from "./Button1.demo.vue";
 import Button3Demo from "./Button3.demo.vue";
+import Button4Demo from "./Button4.demo.vue";
+import Button5Demo from "./Button5.demo.vue";
 export default {
   components: { Button, Demo },
   setup() {
     const onClick = () => {};
-    return { onClick, Button1Demo, Button3Demo };
+    return {
+      onClick,
+      Button1Demo,
+      Button3Demo,
+      Button4Demo,
+      Button5Demo,
+    };
   },
 };
 </script>

@@ -5,7 +5,7 @@
       <h1>青柴UI</h1>
       <h2>一个基于Vue3的UI框架</h2>
       <p class="actions">
-        <a href="http://github.com">GitHub</a>
+        <a href="https://github.com/hecoco/qingchai-UI">GitHub</a>
         <router-link to="/doc/intro">开始</router-link>
       </p>
     </div>

@@ -1,11 +1,10 @@
 <demo>
-常规用法
+加载
 </demo>
 <template>
   <div>
-    <Button>常用按钮</Button>
-    <Button theme='link'>链接</Button>
-    <Button theme='text'>文本</Button>
+    <Button loading>加载中</Button>
+    <Button>加载完成</Button>
   </div>
 </template>
 <script lang='ts'>

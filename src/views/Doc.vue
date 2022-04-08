@@ -81,14 +81,15 @@ export default {
   }
 }
 aside {
-  background: lightblue;
+  // background: lightblue;
+  background: white;
+  border-right: 2px solid #efeff5;
   width: 150px;
   position: fixed;
-  top: 0;
+  top: 70px;
   left: 0;
-  padding-top: 70px;
+  padding-top: 0;
   height: 100%;
-  z-index: 20;
   > h2 {
     margin-bottom: 4px;
     padding: 0 16px;
@@ -107,9 +108,10 @@ aside {
   }
   @media (max-width: 500px) {
     position: fixed;
-    top: 0;
+    top: 70px;
     left: 0;
-    padding-top: 70px;
+    padding-top: 0;
+    z-index: 20;
   }
 }
 main {

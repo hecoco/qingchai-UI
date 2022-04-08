@@ -8,7 +8,10 @@
           <use xlink:href="#icon-mao"></use>
         </svg>
       </router-link>
-      <ul class="menu">
+      <ul
+        class="menu"
+        v-if="!toggleMenuButtonVisible"
+      >
         <li>
           <router-link to='/doc'>文档</router-link>
         </li>
@@ -58,6 +61,8 @@ $color: #006863;
   z-index: 99;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid #efeff5;
+  background: white;
   > .logo {
     max-width: 6em;
     margin-right: auto;
