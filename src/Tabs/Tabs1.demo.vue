@@ -1,11 +1,11 @@
+<demo>
+标签页
+</demo>
 <template>
-  <!-- v-model:selected="title" 没有写的话 默认为第一个 -->
-  <!-- disabled 禁用 -->
   <Tabs v-model:selected="title">
     <Tab title="标题一">内容一</Tab>
     <Tab title="标题二">内容二</Tab>
     <Tab title="标题三">内容三</Tab>
-    <Tab title="标题四">内容四</Tab>
   </Tabs>
 </template>
 <script lang='ts'>
@@ -15,7 +15,7 @@ import Tabs from "../lib/Tabs.vue";
 export default {
   components: { Tab, Tabs },
   setup() {
-    const title = ref("标题二");
+    const title = ref("标题一");
     return { title };
   },
 };
