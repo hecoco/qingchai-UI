@@ -3,6 +3,7 @@
     <h2>{{component.__sourceCodeTitle}}</h2>
     <div class="demo-component">
       <component :is="component" />
+      {{component}}
     </div>
     <div class="demo-actions">
       <Button @click="codeVisible=!codeVisible">查看代码</Button>
@@ -45,6 +46,9 @@ export default {
 
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
+.xx {
+  border: 1px solid red;
+}
 .demo {
   border: 1px solid $border-color;
   margin: 16px 0 32px;

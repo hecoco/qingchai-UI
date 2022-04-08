@@ -1,8 +1,8 @@
 <template>
   <button
-    :class="{'qc-checked' : value}"
-    @click="toggle"
     class="qc-switch"
+    :class="{'qc-checked':value}"
+    @click="toggle"
   ><span></span></button>
 </template>
 
