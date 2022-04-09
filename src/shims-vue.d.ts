@@ -9,3 +9,4 @@ declare module '*.md' {
     export default str;
 }
 
+declare module 'rollup-plugin-scss';
