@@ -1,5 +1,5 @@
 <demo>
-禁用按钮
+禁用状态
 </demo>
 <template>
   <div>
