@@ -3,9 +3,10 @@
 </demo>
 <template>
   <div>
-    <Button>常用按钮</Button>
-    <Button theme='link'>链接</Button>
-    <Button theme='text'>文本</Button>
+    <Button>正常</Button>
+    <Button theme='success'>成功</Button>
+    <Button theme='warning'>警告</Button>
+    <Button theme='danger'>危险</Button>
   </div>
 </template>
 <script lang='ts'>

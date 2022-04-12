@@ -4,10 +4,10 @@
     :class="classes"
     :disabled='disabled'
   >
-    <span
+    <!-- <span
       v-if="loading"
       class="qc-loadingIndicator"
-    ></span>
+    ></span> -->
     <slot />
   </button>
 </template>
@@ -88,7 +88,7 @@ $grey: grey;
   &::-moz-focus-inner {
     border: 0;
   }
-  &.qc-theme-link {
+  &.qc-theme-link {//链接
     border-color: transparent;
     box-shadow: none;
     color: $blue;
@@ -97,7 +97,7 @@ $grey: grey;
       color: lighten($blue, 10%);
     }
   }
-  &.qc-theme-text {
+  &.qc-theme-text {//文本
     border-color: transparent;
     box-shadow: none;
     color: inherit;
@@ -116,29 +116,47 @@ $grey: grey;
     height: 20px;
     padding: 0 4px;
   }
-  &.qc-theme-button {
-    &.qc-level-main {
-      background: $blue;
-      color: white;
-      border-color: $blue;
-      &:hover,
-      &focus {
-        background: darken($blue, 10%);
-        border-collapse: darken($blue, 10%);
-      }
-    }
-    &.qc-level-danger {
-      background: $red;
-      border-color: $red;
-      color: white;
-      &:hover,
-      &:focus {
-        background: darken($red, 10%);
-        border-color: darken($red, 10%);
-      }
+  &.qc-theme-button {//普通按钮
+    &.qc-loading-true{//如果是普通按钮加载中的颜色为$blue
+    &::before{
+      content: "";
+      border-color: $blue $blue $blue transparent;
     }
   }
-  &.qc-theme-link {
+  }
+  &.qc-theme-danger{//危险按钮
+    background: #EB4646;
+    color: white;
+    
+  }
+  &.qc-theme-warning{//警告按钮
+    background: #F59B00;
+    color: white;
+  }
+  &.qc-theme-success{//成功按钮
+    background: #1CAD70;
+    color: white;
+  }
+  &.qc-loading-true{//加载中
+      color: transparent;
+      position: relative;
+      pointer-events:none;
+      position: relative;
+    &::before{
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      margin-right: 4px;
+      border-radius: 8px;
+      border-color: white white white transparent;
+      border-style: solid;
+      border-width: 2px;
+      animation: qc-spin 1s infinite linear;
+    }
+  }
+  &.qc-theme-link {//链接
     &.qc-level-danger {
       color: $red;
       &:hover,
@@ -147,7 +165,7 @@ $grey: grey;
       }
     }
   }
-  &.qc-theme-text {
+  &.qc-theme-text {//文本
     &.qc-level-main {
       color: $blue;
       &:hover,
@@ -163,33 +181,6 @@ $grey: grey;
       }
     }
   }
-  &.qc-theme-button {
-    &[disabled] {
-      cursor: not-allowed;
-      color: $grey;
-      &:hover {
-        border-color: $grey;
-      }
-    }
-  }
-  &.qc-theme-link,
-  &.qc-theme-text {
-    &[disabled] {
-      cursor: not-allowed;
-      color: $grey;
-    }
-  }
-  > .qc-loadingIndicator {
-    width: 14px;
-    height: 14px;
-    display: inline-block;
-    margin-right: 4px;
-    border-radius: 8px;
-    border-color: $blue $blue $blue transparent;
-    border-style: solid;
-    border-width: 2px;
-    animation: qc-spin 1s infinite linear;
-  }
 }
 @keyframes qc-spin {
   0% {
@@ -198,5 +189,8 @@ $grey: grey;
   100% {
     transform: rotate(360deg);
   }
+}
+[disabled] {//禁用
+  opacity:var(--ui-opacity,0.4);
 }
 </style>

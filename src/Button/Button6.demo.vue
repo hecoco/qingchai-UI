@@ -1,13 +1,9 @@
 <demo>
-禁用按钮
+100%宽度
 </demo>
 <template>
   <div>
-    <Button
-      disabled
-      theme='button'
-    >按钮禁用</Button>
-    <Button disabled theme="danger">按钮禁用</Button>
+    <Button theme="danger">常用按钮</Button>
   </div>
 </template>
 <script lang='ts'>
@@ -16,3 +12,7 @@ export default {
   components: { Button },
 };
 </script>
+<style lang="scss" scoped>
+   
+</style>
+

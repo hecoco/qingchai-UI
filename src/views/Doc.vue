@@ -102,7 +102,8 @@ aside {
         text-decoration: none;
       }
       .router-link-active {
-        background: white;
+        background: #2A80EB;
+        color: white;
       }
     }
   }
