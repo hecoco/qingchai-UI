@@ -1,4 +1,5 @@
 yarn build &&
+cp CNAME dist/ &&
 cd dist &&
 git init &&
 git add . &&

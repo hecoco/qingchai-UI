@@ -2,12 +2,11 @@
   <button
     class="qc-button"
     :class="classes"
-    :disabled='disabled'
   >
-    <!-- <span
+    <span
       v-if="loading"
       class="qc-loadingIndicator"
-    ></span> -->
+    ></span>
     <slot />
   </button>
 </template>
@@ -118,11 +117,8 @@ $grey: grey;
     padding: 0 4px;
   }
   &.qc-theme-button {//普通按钮
-    &.qc-loading-true{//如果是普通按钮
-    &::before{
-      content: "";
+    .qc-loadingIndicator{//如果是普通按钮
       border-color: $blue $blue $blue transparent;
-    }
   }
   }
   &.qc-theme-danger{//危险按钮
@@ -138,25 +134,25 @@ $grey: grey;
     background: #1CAD70;
     color: white;
   }
-  &.qc-loading-true{//加载中
-      color: transparent;
-      position: relative;
-      pointer-events:none;
-      position: relative;
-    &::before{
-      content: "";
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      display: inline-block;
-      margin-right: 4px;
-      border-radius: 8px;
-      border-color: white white white transparent;
-      border-style: solid;
-      border-width: 2px;
-      animation: qc-spin 1s infinite linear;
-    }
-  }
+  // &.qc-loading-true{//加载中
+  //     color: transparent;
+  //     position: relative;
+  //     pointer-events:none;
+  //     position: relative;
+  //   &::before{
+  //     content: "";
+  //     position: absolute;
+  //     width: 14px;
+  //     height: 14px;
+  //     display: inline-block;
+  //     margin-right: 4px;
+  //     border-radius: 8px;
+  //     border-color: white white white transparent;
+  //     border-style: solid;
+  //     border-width: 2px;
+  //     animation: qc-spin 1s infinite linear;
+  //   }
+  // }
   &.qc-theme-link {//链接
     &.qc-level-danger {
       color: $red;
@@ -181,6 +177,17 @@ $grey: grey;
         color: darken($red, 10%);
       }
     }
+  }
+  > .qc-loadingIndicator {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: white white white transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: qc-spin 1s infinite linear;
   }
 }
 @keyframes qc-spin {

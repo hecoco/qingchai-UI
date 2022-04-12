@@ -33,6 +33,14 @@
             <router-link to="/doc/tabs">Tabs</router-link>
           </li>
         </ol>
+        <!-- <h2>其他项目</h2>
+        <ol>
+          <li>
+            <routerLink>记一笔</routerLink>
+            <routerLink>手绘</routerLink>
+            <routerLink></routerLink>
+          </li>
+        </ol> -->
       </aside>
       <main>
         <router-view></router-view>
