@@ -4,14 +4,14 @@
 <template>
   <div>
     <Button :loading="x">加载中</Button>
-    <Button theme='success' @click="ok">成功</Button>
+    <Button loading theme='success'>成功</Button>
     <Button loading theme='warning'>警告</Button>
     <Button loading theme='danger'>危险</Button>
     <Button :loading="xx" theme='danger'>危险</Button>
   </div>
 </template>
 <script lang='ts'>
-import { onMounted, ref } from 'vue';
+import { onBeforeUpdate, ref } from 'vue';
 import Button from "../lib/Button.vue";
 export default {
   components: { Button },
@@ -21,6 +21,11 @@ export default {
     setTimeout(() => {
       x.value=false
     }, 1000);
+    onBeforeUpdate(()=>{
+      setTimeout(() => {
+        x.value=false
+      }, 1000);
+    })
     return {x,xx}
   }
 };
