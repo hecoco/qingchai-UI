@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { computed } from "@vue/runtime-core";
+import { computed } from "vue";
 export default {
   props: {
     theme: {
@@ -37,7 +37,8 @@ export default {
       default: false,
     },
   },
-  setup(props) {
+  
+  setup(props,context) {
     const { theme, size, level, loading } = props;
     const classes = computed(() => {
       return {
@@ -117,7 +118,7 @@ $grey: grey;
     padding: 0 4px;
   }
   &.qc-theme-button {//普通按钮
-    &.qc-loading-true{//如果是普通按钮加载中的颜色为$blue
+    &.qc-loading-true{//如果是普通按钮
     &::before{
       content: "";
       border-color: $blue $blue $blue transparent;
