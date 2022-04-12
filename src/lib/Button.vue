@@ -2,6 +2,7 @@
   <button
     class="qc-button"
     :class="classes"
+    :disabled="disabled"
   >
     <span
       v-if="loading"

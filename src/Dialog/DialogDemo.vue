@@ -1,4 +1,5 @@
 <template>
+<h1>Dialog 文档</h1>
   <div>
     <Demo :component='Dialog1Demo' />
     <Demo :component='Dialog2Demo' />

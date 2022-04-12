@@ -1,10 +1,10 @@
 <template>
+<h1>Button 文档</h1>
   <div>
     <Demo :component='Button1Demo' />
     <Demo :component='Button3Demo' />
     <Demo :component='Button4Demo' />
     <Demo :component='Button5Demo' />
-
   </div>
 </template>
 

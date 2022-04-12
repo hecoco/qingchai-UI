@@ -1,4 +1,5 @@
 <template>
+<h1>Switch 文档</h1>
   <div>
     <Demo :component="Switch1Demo" />
     <Demo :component="Switch2Demo" />

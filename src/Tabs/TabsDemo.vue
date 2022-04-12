@@ -1,6 +1,7 @@
 <template>
   <!-- v-model:selected="title" 没有写的话 默认为第一个 -->
   <!-- disabled 禁用 -->
+<h1>Tabs 文档</h1>
   <div>
     <Demo :component='Tabs1Demo' />
   </div>
