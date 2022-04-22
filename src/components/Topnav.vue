@@ -1,26 +1,16 @@
 <template>
   <div>
     <div class="topnav">
-      <router-link
-        to="/"
-        class="logo"
-      ><svg class="icon">
-          <use xlink:href="#icon-mao"></use>
+      <router-link to="/" class="logo"><svg class="icon">
+          <use xlink:href="#icon-gouhuo"></use>
         </svg>
       </router-link>
-      <ul
-        class="menu"
-        v-if="!toggleMenuButtonVisible"
-      >
+      <ul class="menu" v-if="!toggleMenuButtonVisible">
         <li>
           <router-link to='/doc'>文档</router-link>
         </li>
       </ul>
-      <svg
-        v-if="toggleMenuButtonVisible"
-        class="toggleAside"
-        @click="toggleMenu"
-      >
+      <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
         <use xlink:href="#icon-liebiao"></use>
       </svg>
     </div>
@@ -49,6 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 $color: #006863;
+
 .topnav {
   color: $color;
   display: flex;
@@ -62,23 +53,28 @@ $color: #006863;
   align-items: center;
   border-bottom: 1px solid #efeff5;
   background: white;
-  > .logo {
+
+  >.logo {
     max-width: 6em;
     margin-right: auto;
-    > svg {
+
+    >svg {
       width: 32px;
       height: 32px;
     }
   }
-  > .menu {
+
+  >.menu {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
-    > li {
+
+    >li {
       margin: 0 1em;
     }
   }
-  > .toggleAside {
+
+  >.toggleAside {
     color: black;
     width: 28px;
     height: 28px;
@@ -88,14 +84,17 @@ $color: #006863;
     transform: translateY(-50%);
     display: none;
   }
+
   @media (max-width: 500px) {
-    > .menu {
+    >.menu {
       display: none;
     }
-    > .logo {
+
+    >.logo {
       margin: 0 auto;
     }
-    > .toggleAside {
+
+    >.toggleAside {
       display: inline-block;
     }
   }

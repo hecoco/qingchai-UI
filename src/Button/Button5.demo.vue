@@ -3,7 +3,7 @@
 </demo>
 <template>
   <div>
-    <Button :loading="x" @click="ok">{{text}}</Button>
+    <Button :loading="loading" @click="ok">{{text}}</Button>
     <Button loading theme='success'>成功</Button>
     <Button loading theme='warning'>警告</Button>
     <Button loading theme='danger'>危险</Button>
@@ -17,13 +17,15 @@ export default {
   components: { Button ,Switch},
 
   setup(){
-    const x = ref(false)
-    const text = ref('点击加载')
+    const loading = ref(false)
+    const text = ref('点击后2秒加载')
     const ok = ()=>{
-      x.value = true
-      text.value='加载中'
+      setTimeout(() => {
+        loading.value = true
+        text.value='加载中'
+      }, 2000);
     }
-    return {x,ok,text}
+    return {loading,ok,text}
   }
 };
 </script>

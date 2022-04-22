@@ -32,6 +32,9 @@
           <li>
             <router-link to="/doc/tabs">Tabs 组件</router-link>
           </li>
+          <!-- <li>
+            <router-link to="/doc/toast">1111</router-link>
+          </li> -->
         </ol>
         <!-- <h2>其他项目</h2>
         <ol>
