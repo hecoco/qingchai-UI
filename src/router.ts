@@ -5,6 +5,7 @@ import SwitchDemo from './Switch/SwitchDemo.vue';
 import ButtonDemo from './Button/ButtonDemo.vue';
 import DialogDemo from './Dialog/DialogDemo.vue';
 import TabsDemo from './Tabs/TabsDemo.vue';
+import RadioDemo from './Radio/RadioDemo.vue';
 import Intro from './views/Intro.vue';
 import ToastDemo from './components/ToastDemo.vue'
 import Install from './views/Install.vue';
@@ -30,7 +31,7 @@ export const router = createRouter({
                 { path: 'button', component: ButtonDemo },
                 { path: 'dialog', component: DialogDemo },
                 { path: 'tabs', component: TabsDemo },
-                // { path: 'toast', component: ToastDemo }
+                { path: 'select', component: RadioDemo },
             ]
         },
     ]

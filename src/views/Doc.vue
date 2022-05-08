@@ -1,9 +1,6 @@
 <template>
   <div class="layout">
-    <Topnav
-      toggleMenuButtonVisible
-      class="nav"
-    />
+    <Topnav toggleMenuButtonVisible class="nav" />
     <div class="content">
       <aside v-show="menuVisible">
         <h2>文档</h2>
@@ -31,6 +28,9 @@
           </li>
           <li>
             <router-link to="/doc/tabs">Tabs 组件</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/select">Select 组件</router-link>
           </li>
           <!-- <li>
             <router-link to="/doc/toast">1111</router-link>
@@ -68,29 +68,36 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  > .nav {
+
+  >.nav {
     flex-shrink: 0;
   }
-  > .content {
+
+  >.content {
     flex-grow: 1;
     padding-top: 60px;
     padding-left: 156px;
+
     @media (max-width: 500px) {
       padding-left: 0;
     }
   }
 }
+
 .content {
   display: flex;
-  > aside {
+
+  >aside {
     flex-shrink: 0;
   }
-  > main {
+
+  >main {
     flex-grow: 1;
     padding: 16px;
     background: white;
   }
 }
+
 aside {
   // background: lightblue;
   background: white;
@@ -101,23 +108,27 @@ aside {
   left: 0;
   padding-top: 0;
   height: 100%;
-  > h2 {
+
+  >h2 {
     margin-bottom: 4px;
     padding: 0 16px;
   }
-  > ol {
-    > li {
-      > a {
+
+  >ol {
+    >li {
+      >a {
         display: block;
         padding: 4px 16px;
         text-decoration: none;
       }
+
       .router-link-active {
         background: #2A80EB;
         color: white;
       }
     }
   }
+
   @media (max-width: 500px) {
     position: fixed;
     top: 70px;
@@ -126,6 +137,7 @@ aside {
     z-index: 20;
   }
 }
+
 main {
   overflow: auto;
 }

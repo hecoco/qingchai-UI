@@ -7,3 +7,5 @@ dist
 .idea
 build.txt
 待实现.md
+/src/Radio/RadioGroup1.demo.vue
+/src/lib/RadioGroup.vue
