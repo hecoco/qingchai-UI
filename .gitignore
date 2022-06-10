@@ -1,11 +1,11 @@
 node_modules
 .DS_Store
 dist
+.idea
+.vscode
 /dist
 *.local
-.vscode
-.idea
+/.vscode
+/.idea
 build.txt
 待实现.md
-/src/Radio/RadioGroup1.demo.vue
-/src/lib/RadioGroup.vue

@@ -1,6 +1,6 @@
 <template>
-  <label name="S">
-    <input type="radio" :name="name">
+  <label>
+    <input type="radio" v-model="model" :value="label" :name="modelValue">
     <span>
       <slot />
     </span>
@@ -8,13 +8,33 @@
 </template>
 
 <script lang="ts">
+import { computed } from 'vue';
 export default {
   props: {
-    name: String,
+    modelValue:String,
+    label:{
+      type:[String,Number,Boolean]
+    },
+    name:{
+      type:String,
+      default:''
+    }
   },
-  emits: ['update:modelValue'],
-  setup(props) {
-    console.log(props.name)
+  // emits: ['update:modelValue'],
+  setup(props,context) {
+    console.log(props)
+    // function onMode(){
+    //   context.emit('update:modelValue',"props.name")
+    // }
+    const model = computed({
+      get(){
+        return props.modelValue;
+      },
+      set(modelValue){
+        context.emit("update:modelValue",modelValue)
+      }
+    })
+    return {}
   }
 };
 </script>
