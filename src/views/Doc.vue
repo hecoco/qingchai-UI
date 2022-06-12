@@ -8,12 +8,6 @@
           <li>
             <router-link to='/doc/intro'>介绍</router-link>
           </li>
-          <li>
-            <router-link to='/doc/install'>安装</router-link>
-          </li>
-          <li>
-            <router-link to='/doc/get-started'>开始</router-link>
-          </li>
         </ol>
         <h2>组件列表</h2>
         <ol>
@@ -29,21 +23,8 @@
           <li>
             <router-link to="/doc/tabs">Tabs 组件</router-link>
           </li>
-          <!-- <li>
-            <router-link to="/doc/select">Select 组件</router-link>
-          </li> -->
-          <!-- <li>
-            <router-link to="/doc/toast">1111</router-link>
-          </li> -->
+         
         </ol>
-        <!-- <h2>其他项目</h2>
-        <ol>
-          <li>
-            <routerLink>记一笔</routerLink>
-            <routerLink>手绘</routerLink>
-            <routerLink></routerLink>
-          </li>
-        </ol> -->
       </aside>
       <main>
         <router-view></router-view>
